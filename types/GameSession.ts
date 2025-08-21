@@ -9,10 +9,11 @@ export const GameSessionData = z.object({
 			metadata: z.object({
 				gamemode: z.string(),
 			}),
-			roles_player: z.record(z.string(), z.number()),
+			state: z.string().optional(),
 		})
 		.optional(),
 	story: GameStory.optional(),
+	roles_player: z.record(z.string(), z.number()).optional(),
 });
 export type GameSessionData = z.infer<typeof GameSessionData>;
 
