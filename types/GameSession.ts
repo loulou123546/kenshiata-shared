@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { GamePlayer } from "./GamePlayer";
-import { GameStory } from "./GameStory";
+import { StoryWithoutInk } from "./Story";
 
 export const GameSessionData = z.object({
 	ink: z
@@ -12,7 +12,7 @@ export const GameSessionData = z.object({
 			state: z.string().optional(),
 		})
 		.optional(),
-	story: GameStory.optional(),
+	story: StoryWithoutInk.optional(),
 	roles_player: z.record(z.string(), z.number()).optional(),
 });
 export type GameSessionData = z.infer<typeof GameSessionData>;
