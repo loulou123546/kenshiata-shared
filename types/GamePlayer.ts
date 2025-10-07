@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const GamePlayerData = z.object({
 	storyVote: z.string().optional(),
+	choiceVote: z.number().optional(),
 	avatar: z.string().optional(),
 	character_name: z.string().optional(),
 });
