@@ -58,3 +58,20 @@ export const ConfirmSignupRequest = z.object({
 	code: z.string(),
 });
 export type ConfirmSignupRequest = z.infer<typeof ConfirmSignupRequest>;
+
+export const RefreshTokenRequest = z.object({
+	refresh_token: z.string(),
+});
+export type RefreshTokenRequest = z.infer<typeof RefreshTokenRequest>;
+
+export const RefreshTokenResponse = z.object({
+	success: z
+		.object({
+			id_token: z.string(),
+			access_token: z.string(),
+			refresh_token: z.string().optional(),
+		})
+		.optional(),
+	error: z.string().optional(),
+});
+export type RefreshTokenResponse = z.infer<typeof RefreshTokenResponse>;
