@@ -36,8 +36,9 @@ export const SignupResponse = z.object({
 	userId: z.string().optional(),
 	success: z
 		.object({
-			confirmed: z.boolean(),
-			session_id: z.string(),
+			id_token: z.string(),
+			access_token: z.string(),
+			refresh_token: z.string().optional(),
 		})
 		.optional(),
 	continue: z
