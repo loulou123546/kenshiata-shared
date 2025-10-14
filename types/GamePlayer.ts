@@ -5,6 +5,7 @@ export const GamePlayerData = z.object({
 	choiceVote: z.number().optional(),
 	avatar: z.string().optional(),
 	character_name: z.string().optional(),
+	character_id: z.string().optional(),
 });
 export type GamePlayerData = z.infer<typeof GamePlayerData>;
 
