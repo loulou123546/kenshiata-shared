@@ -5,6 +5,7 @@ export const Character = z.object({
 	id: z.string().uuid(),
 	name: z.string().min(1, "Character name is required"),
 	avatar: z.string(),
+	avatar_base64: z.string().optional(),
 });
 export type Character = z.infer<typeof Character>;
 
