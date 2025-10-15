@@ -30,3 +30,14 @@ export type StoryWithoutInk = z.infer<typeof StoryWithoutInk>;
 
 export const Stories = z.array(Story.omit({ ink: true }));
 export type Stories = z.infer<typeof Stories>;
+
+export const StoryId = Story.pick({
+	id: true,
+});
+export type StoryId = z.infer<typeof StoryId>;
+
+export const CompilerError = z.object({
+	message: z.string(),
+	type: z.number(),
+});
+export type CompilerError = z.infer<typeof CompilerError>;
