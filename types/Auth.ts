@@ -77,3 +77,16 @@ export const RefreshTokenResponse = z.object({
 	error: z.string().optional(),
 });
 export type RefreshTokenResponse = z.infer<typeof RefreshTokenResponse>;
+
+export const ForgotPasswordRequest = z.object({
+	username: z.string(),
+	turnstileToken: z.string(),
+});
+export type ForgotPasswordRequest = z.infer<typeof ForgotPasswordRequest>;
+
+export const ResetPasswordRequest = z.object({
+	username: z.string(),
+	password: z.string(),
+	code: z.string(),
+});
+export type ResetPasswordRequest = z.infer<typeof ResetPasswordRequest>;
