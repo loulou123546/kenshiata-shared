@@ -28,6 +28,7 @@ export const SignupRequest = z.object({
 	username: z.string(),
 	password: z.string(),
 	email: z.string().email(),
+	consent_email: z.array(z.string()),
 	turnstileToken: z.string(),
 });
 export type SignupRequest = z.infer<typeof SignupRequest>;
