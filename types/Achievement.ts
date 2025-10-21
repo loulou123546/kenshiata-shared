@@ -12,7 +12,7 @@ export type Achievement = z.infer<typeof Achievement>;
 export const PlayerAchievement = z.object({
 	userId: z.string(),
 	storyId: z.string(),
-	id: z.string(),
+	achievementId: z.string(),
 	title: z.string(),
 	description: z.string(),
 	public: z.boolean(),
