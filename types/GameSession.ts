@@ -24,3 +24,12 @@ export const GameSession = z.object({
 	data: GameSessionData.optional(),
 });
 export type GameSession = z.infer<typeof GameSession>;
+
+export const UserGameSession = z.object({
+	userId: z.string(),
+	sessionId: z.string(),
+	characterId: z.string(),
+	last_joined: z.string().datetime(),
+	first_joined: z.string().datetime(),
+});
+export type UserGameSession = z.infer<typeof UserGameSession>;
