@@ -29,7 +29,7 @@ export const UserGameSession = z.object({
 	userId: z.string(),
 	sessionId: z.string(),
 	characterId: z.string(),
-	name: z.string(),
+	sessionName: z.string(),
 	last_joined: z.string().datetime(),
 	first_joined: z.string().datetime(),
 });
