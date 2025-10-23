@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { GamePlayer } from "./GamePlayer";
 import { StoryWithoutInk } from "./Story";
+import { StoryLine } from "./InkStory";
 
 export const GameSessionData = z.object({
 	ink: z
@@ -10,6 +11,7 @@ export const GameSessionData = z.object({
 				gamemode: z.string(),
 			}),
 			state: z.string().optional(),
+			last_texts: z.array(StoryLine).optional(),
 		})
 		.optional(),
 	story: StoryWithoutInk.optional(),
